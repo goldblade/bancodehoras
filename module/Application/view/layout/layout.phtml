@@ -1,47 +1,57 @@
 <?php echo $this->doctype(); ?>
 
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8">
-        <?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?php echo $this->headTitle('Banco de Horas ')->setSeparator(' - ')->setAutoEscape(false) ?>
 
         <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
         <!-- Le styles -->
-        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/images/favicon.ico'))
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap-responsive.min.css')
-                        ->prependStylesheet($this->basePath() . '/css/style.css')
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath() . '/css/gumby.css')         
+                        ->prependStylesheet($this->basePath() . '/css/style.css')                        
+                        ?>
 
         <!-- Scripts -->
-        <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-                                      ->prependFile($this->basePath() . '/js/jquery-1.7.2.min.js') ?>
+        <?php echo $this->headScript()
+                                      ->prependFile($this->basePath() . '/js/plugins.js')
+                                      ->prependFile($this->basePath() . '/js/main.js')
+                                      ->prependFile($this->basePath() . '/js/libs/gumby.min.js')
+                                      ->prependFile($this->basePath() . '/js/libs/jquery-2.0.2.min.js')
+                                      ->prependFile($this->basePath() . '/js/libs/modernizr-2.6.2.min.js') ?>
     </head>
     <body>
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+        <header>
+            <div class="row navbar pretty" id="nav1">
+                <!-- Toggle for mobile navigation, targeting the <ul> -->
+                <a class="toggle" gumby-trigger="#nav1 > ul" href="#"><i class="icon-menu"></i></a>
+                <h1 class="four columns logo">
+                    <a href="#">
+                        <img src="/img/gumby_mainlogo.png" gumby-retina />
                     </a>
-                    <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a>
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
+                </h1>
+                <ul class="eight columns">
+                    <li><a href="#">Features</a></li>
+                    <li>
+                        <a href="#">Documentation</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="#">The Grid</a></li>
+                                <li><a href="#">UI Kit</a></li>
+                                <li><a href="#">Sass</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                                <li><a href="#">Demo</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Customize</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="container">
-            <?php echo $this->content; ?>
-            <hr>
-            <footer>
-                <p>&copy; 2005 - 2012 by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
-            </footer>
-        </div> <!-- /container -->
+        </header>        
+        
+        <?php echo $this->content; ?>
+        
         <?php echo $this->inlineScript() ?>
     </body>
 </html>

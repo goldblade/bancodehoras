@@ -1,4 +1,6 @@
-# Projeto para gerenciamento do banco de horas de estágio da UNIFACS
+# Banco de horas Estágio UNIFACS
+
+Sistema de gerenciamento do banco de horas relacionados a estágio da UNIFACS.
 
 ## Ferramentas utilizadas
 

@@ -3,6 +3,9 @@ return array(
     'modules' => array(
         'Application',
         'Core',
+        'ZendDeveloperTools',
+        'DoctrineModule',
+        'DoctrineORMModule',
         'Skel'
     ),
     'module_listener_options' => array(

@@ -4,7 +4,7 @@ namespace Core\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
-use Core\Db\TableGateway;
+//use Core\Db\TableGateway;
 
 class ActionController extends AbstractActionController
 {

@@ -1,0 +1,42 @@
+<div class="wrapper">
+	<div class="row">
+		<div class="twelve columns">
+			<h2>Banco de Horas</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="twelve columns">
+
+			<?php
+			echo $this->form()->openTag($form);
+			echo $this->form()->openTag($form);
+			$id = $this->form->get('id');
+			$matricula = $this->form->get('matricula');
+			$nome = $this->form->get('nome');
+			?>
+			<fieldset>
+				<legend>Novo Aluno</legend>
+				<div class="field">
+					<?php
+					echo $this->formInput($nome);
+					echo $this->formElementErrors($nome);
+					?>
+				</div>
+				<div class="field">
+					<?php
+					echo $this->formInput($matricula);
+					echo $this->formElementErrors($matricula);
+					?>
+				</div>
+
+			<?php
+			$enviar = $this->form->get('submit');			
+    		echo $this->formElement($enviar);
+    		?>
+    		</fieldset>
+    		<?php
+			echo $this->form()->closeTag();
+			?>			
+		</div>		
+	</div>	
+</div>

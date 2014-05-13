@@ -41,8 +41,15 @@ class Aluno extends Entity
 	/**
 	 * @var string $matricula
 	 *
-	 * @ORM\Column(type="string", unique=true)
+	 * @ORM\Column(type="string", unique=true, length=14)
 	 */
 	protected $matricula;
+
+	/**
+	 * @var string $nome
+	 * 
+	 * @ORM\Column(type="string", length=80)
+	 */
+	protected $nome;
 
 }

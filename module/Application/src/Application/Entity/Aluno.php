@@ -33,7 +33,7 @@ class Aluno extends Entity
 	 * @var  int $id
 	 * 
 	 * @ORM\Id
-	 * @ORM\Column(name="cod_setor", type="integer", nullable=false)
+	 * @ORM\Column(type="integer", nullable=false)
 	 * @ORM\GeneratedValue(strategy="AUTO")	 
 	 */
 	protected $id;

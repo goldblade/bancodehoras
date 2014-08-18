@@ -52,4 +52,77 @@ class Aluno extends Entity
 	 */
 	protected $nome;
 
+	/**
+	 * getters and setters 
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
+
+	public function setId($value)
+	{
+		$this->id = $this->valid("id", $value);
+	}
+
+	public function getMatricula()
+	{
+		return $this->matricula;
+	}
+
+	public function setMatricula($value)
+	{
+		$this->matricula = $this->valid("matricula", $value);
+	}
+
+
+	/**
+	 * [$inputFilter description]
+	 * @var [type]
+	 */
+	protected $inputFilter;
+
+	/**
+	 * Configura os filtros dos campos da entidade
+	 * 
+	 * @return Zend\InputFilter\Inputfilter
+	 */
+	public function getInputFilter()
+	{
+		if (!$this->inputFilter){
+			$inputFilter = new InputFilter();
+			$factory = new InputFactory();
+
+			$inputFilter->add($factory->createInput(array(
+				'name' => 'id',
+				'required' => true,	
+				'filters' => array(
+					array('name' => 'Int'),
+				),			
+			)));			
+
+			$inputFilter->add($factory->createInput(array(
+				'name' => 'nome',
+				'required' => true,
+				'filters'	=>	array(
+					array('name'	=>	'StripTags'),
+					array('name'	=>	'StringTrim'),
+				),				
+			)));
+
+			$inputFilter->add($factory->createInput(array(
+				'name' => 'matricula',
+				'required' => true,
+				'filters'	=>	array(
+					array('name'	=>	'StripTags'),
+					array('name'	=>	'StringTrim'),
+				),				
+			)));
+
+			$this->inputFilter = $inputFilter;
+		}
+		return $this->inputFilter;
+	}
+
+
 }
